@@ -199,7 +199,7 @@ with Engine(custom_parser=parser) as engine:
     
 
     # rgb分支
-    model = segmodel(cfg=config, criterion=criterion, norm_layer=BatchNorm2d, load=True, args.decode_init)
+    model = segmodel(cfg=config, criterion=criterion, norm_layer=BatchNorm2d, load=True, decode_init=args.decode_init)
     # print(model)
     # print("model", model.backbone.patch_embed1.proj.weight)
     # print("model", model.backbone.extra_patch_embed1.proj.weight)
@@ -209,7 +209,7 @@ with Engine(custom_parser=parser) as engine:
     # depth分支
     config.backbone = 'single_mit_b2'
     print(config.backbone)
-    model2 = segmodel2(cfg=config, criterion=criterion2, norm_layer=BatchNorm2d2, load=True, args.decode_init)
+    model2 = segmodel2(cfg=config, criterion=criterion2, norm_layer=BatchNorm2d2, load=True, decode_init=args.decode_init)
 
     # print("model2", model2.backbone.patch_embed1.proj.weight)
     # print("model2", model2.decode_head.linear_c4.proj.weight)
