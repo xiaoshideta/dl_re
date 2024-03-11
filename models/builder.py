@@ -198,7 +198,7 @@ class EncoderDecoder2(nn.Module):
 
         else:
             logger.info('Using backbone: single-Segformer-B2')
-            from .encoders.single_dual_segformer import single_mit_b2 as backbone
+            from .encoders.single_segformer import single_mit_b2 as backbone
             self.backbone = backbone(norm_fuse=norm_layer)
 
         self.aux_head = None
