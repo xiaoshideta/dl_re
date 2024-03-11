@@ -478,6 +478,7 @@ class Evaluator(object):
     
         p_img = p_img.transpose(2, 0, 1) # 3 H W
         if modal_x is not None:
+        p_modal_x = modal_x
             if len(modal_x.shape) == 2:
                 p_modal_x = p_modal_x[np.newaxis, ...]
             else:
